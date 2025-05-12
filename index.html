@@ -1,4 +1,5 @@
- <!DOCTYPE html>
+<!-- index.html -->
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -40,15 +41,15 @@
                 <button class="filter-btn" data-team="juventus">Juventus</button>
                 <button class="filter-btn" data-team="inter">Inter</button>
                 <button class="filter-btn" data-team="milan">Milan</button>
-                <!-- Aggiungi altre squadre -->
+                <button class="filter-btn" data-team="napoli">Napoli</button>
+                <button class="filter-btn" data-team="roma">Roma</button>
+                <button class="filter-btn" data-team="lazio">Lazio</button>
             </div>
         </div>
     </section>
 
     <!-- Products Grid -->
-    <main class="products-grid" id="products-container">
-        <!-- Prodotti generati dinamicamente via JS -->
-    </main>
+    <main class="products-grid" id="products-container"></main>
 
     <!-- Cart Sidebar -->
     <div class="cart-sidebar">
@@ -61,13 +62,8 @@
             <span>Totale:</span>
             <span id="cart-total">€0.00</span>
         </div>
-        <button class="checkout-btn" onclick="startCheckout()">Checkout</button>
+        <button class="checkout-btn" onclick="startCheckout()">Procedi all'acquisto</button>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <!-- Contenuto footer -->
-    </footer>
 
     <script src="script.js"></script>
 </body>
