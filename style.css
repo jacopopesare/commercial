@@ -1,75 +1,165 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+/* style.css */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #e60000;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f8f9fa;
 }
 
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
+[data-theme="dark"] {
+    --primary-color: #f8f9fa;
+    --secondary-color: #e60000;
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --card-bg: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--primary-color);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    height: 40px;
+}
+
+.search-container {
+    position: relative;
+    margin-right: 2rem;
+}
+
+.search-container input {
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    border: none;
+    width: 300px;
 }
 
 .cart-icon {
+    position: relative;
     cursor: pointer;
     font-size: 1.5rem;
+    padding: 0.5rem;
 }
 
-.products {
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('stadium-bg.jpg') center/cover;
+    color: white;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.product {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    width: 200px;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.product img {
-    max-width: 100%;
+.team-filter {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-button {
-    background: #333;
-    color: #fff;
+.filter-btn {
+    padding: 0.8rem 1.5rem;
     border: none;
-    padding: 0.5rem 1rem;
+    border-radius: 25px;
     cursor: pointer;
-    margin-top: 0.5rem;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    transition: all 0.3s;
 }
 
-button:hover {
-    background: #555;
+.filter-btn.active {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 3rem 5%;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
 }
 
 .cart-sidebar {
     position: fixed;
     top: 0;
-    right: -300px;
-    width: 300px;
-    height: 100%;
-    background: #fff;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: var(--card-bg);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
     transition: right 0.3s;
-    padding: 1rem;
-    overflow-y: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-sidebar.active {
     right: 0;
 }
 
-#cart-items div {
-    border-bottom: 1px solid #ddd;
-    padding: 0.5rem 0;
-}
+/* Aggiungi altri stili per dark mode, responsive design, ecc. */
